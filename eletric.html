@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="c">
+        <label for="t1">Tensão 110v</label>
+        <input type="radio" name="tension" id="t1" value="110">
+        <label for="t2">Tensão 220v</label>
+        <input type="radio" name="tension" id="t2" value="220" checked>
+        <br>
+        <label for="current">Corrente (a)</label>
+        <input type="number" name="current" id="current">
+        <br>
+        <label for="cu">Cobre (cu)</label>
+        <input type="radio" name="material" id="cu" value="cu" checked>
+        <br>
+        <label for="potence">Potência (w)</label>
+        <input type="number" name="potence" id="potence" value="potence">
+        <br>
+        <label for="temperature">Temperatura (c)</label>
+        <input type="number" name="temperature" id="temperature" value="35">
+        <br>
+        <label for="length">Comprimento (m)</label>
+        <input type="number" name="length" id="length" value="1">
+        <br>
+        <label for="area">Área transversal (mm2)</label>
+        <input type="number" name="area" id="area">
+    </form>
+    <script>
+        document.body.addEventListener('change', event => {
+            if (event.target && event.target.form) {
+                const form = event.target.form.id
+                if (form === 'c') {
+                    const area = document.body.querySelector('input[name=area]')
+                    const length = document.body.querySelector('input[name=length')
+                    const current = document.body.querySelector('input[name=current]')
+                    const potence = document.body.querySelector('input[name=potence]')
+                    const tension = document.body.querySelector('input[name=tension][checked]')
+                    const material = document.body.querySelector('input[name=material][checked]')
+                    const temperature = document.body.querySelector('input[name=temperature]')
+                    const coefficient = material.value === 'cu' ? 0.00404 : 0
+                    const resistivity = material.value === 'cu' ? 0.0000000168 : 0
+                    if (current.value && tension.value) {
+                        potence.value = current.value * tension.value
+                    }
+                    if (potence.value && tension.value) {
+                        current.value = potence.value / tension.value
+                    }
+                    if (current.value && length.value && tension.value) {
+                        const q = resistivity * (1 + coefficient * (temperature.value - 20))
+                        const a = (current.value * q * (2 * length.value)) / tension.value
+                        area.value = (a * 1000000).toFixed(2)
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

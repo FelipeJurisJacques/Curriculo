@@ -1,0 +1,19 @@
+div.page,
+div.cloak,
+div.container {
+    margin-top: calc(3 * var(--delta-cm));
+    padding-top: calc(3.5 * var(--delta-cm));
+    padding-left: calc(3 * var(--delta-cm));
+    padding-right: calc(3 * var(--delta-cm));
+    padding-bottom: calc(2.5 * var(--delta-cm));
+}
+
+.resume,
+.abstract {
+    margin-left: calc(0.8 * var(--delta-cm));
+    margin-right: calc(0.8 * var(--delta-cm));
+}
+
+.aanhaling {
+    margin-left: calc(2.73 * var(--delta-cm));
+}

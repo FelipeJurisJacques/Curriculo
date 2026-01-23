@@ -1,0 +1,184 @@
+:root {
+    --delta: 1.9090909090909091;
+    --delta-cm: 0.95cm;
+}
+
+@media print {
+    :root {
+        --delta: 1.333;
+        --delta-cm: 0.7501875468867217cm;
+    }
+}
+
+* {
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: #282A36;
+}
+
+div.page,
+div.cloak,
+div.container {
+    width: calc(21 * var(--delta-cm));
+    margin: 0;
+    margin-top: calc(3 * var(--delta-cm));
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(3 * var(--delta-cm));
+    background-color: white;
+}
+
+b {
+    color: inherit;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+h1 {
+    color: inherit;
+    font-size: 13pt;
+    text-align: left;
+    margin-top: 12pt;
+    font-weight: bold;
+    margin-bottom: 0pt;
+}
+
+p,
+li {
+    color: inherit;
+    margin-top: 6pt;
+    font-size: inherit;
+    margin-bottom: 0pt;
+}
+
+ul {
+    margin: 0cm;
+    padding: 0cm;
+    color: inherit;
+    padding-left: calc(1.27 * var(--delta-cm));
+}
+
+.retreat {
+    text-indent: calc(1.27 * var(--delta-cm));
+}
+
+p.reference {
+    text-indent: calc(-0.5 * var(--delta-cm));
+    padding-left: calc(0.5 * var(--delta-cm));
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+div.cloak,
+div.page {
+    height: calc(29.7 * var(--delta-cm));
+    text-align: center;
+}
+
+div.cloak {
+    text-align: center;
+}
+
+div.cloak .title {
+    font-size: 16pt;
+}
+
+div.cloak .authors {
+    text-align: center;
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    div.container {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+.justify {
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.courier-new {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.times-new-roman {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pt-10 {
+    font-size: 10pt;
+}
+
+.pt-12 {
+    font-size: 12pt;
+}
+
+.pt-16 {
+    font-size: 16pt;
+}
+
+.pt-20 {
+    font-size: 20pt;
+}
+
+.pt-24 {
+    font-size: 24pt;
+}
+
+.color-black {
+    color: black;
+}
+
+.color-white {
+    color: white;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCC</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/tcc.css">
+</head>
+
+<body class="pt-12 time-new-roman">
+    <div class="cloak">
+        <p class="title">
+            <b>
+                Gestão Pessoal de Credenciais de Acesso a Serviços Digitais
+            </b>
+        </p>
+        <p class="authors">
+            <b>
+                Felipe Juris Jacques<sup>1</sup>, Eduardo Dalcin<sup>2</sup>
+            </b>
+        </p>
+        <p class="university">
+            Instituto Federal de Educação, Ciência e Tecnologia Farroupilha Campus Panambi
+        </p>
+        <p class="emails pt-10 courier-new">
+            <a href="mailto:felipe.96032@aluno.iffar.edu.br">felipe.96032@aluno.iffar.edu.br</a>, <a
+                href="mailto:eduardo.dalcin@iffarroupilha.edu.br">eduardo.dalcin@iffarroupilha.edu.br</a>
+        </p>
+        <p class="abstract justify">
+            <i>
+                <b>
+                    Abstract.
+                </b>
+                O abstract...
+            </i>
+        </p>
+        <p class="resume justify">
+            <i>
+                <b>
+                    Resumo.
+                </b>
+                Esse artigo...
+            </i>
+        </p>
+    </div>
+    <div class="container">
+        <h1>
+            1. Introdução
+        </h1>
+        <p>
+            A introdução...
+        </p>
+        <h1>
+            2. Credenciais de Acesso a Serviços Digitais
+        </h1>
+        <p>
+            Qualquer serviço digital que exija autenticidade para identificar usuários utiliza credenciais de acesso.
+            Embora cada serviço tenha credenciais únicas, eles compartilham padrões comuns que os usuários conhecem.
+            Além disso, os serviços digitais têm contratos que os usuários devem aceitar, mas a tecnologia por trás da
+            segurança não é transparente para os usuários. No entanto, é responsabilidade do usuário operar corretamente
+            e respeitar práticas de segurança comuns.
+        </p>
+        <h1>
+            2.1. A Segurança de Um Serviço Digital
+        </h1>
+        <p>
+            As credenciais de acesso devem ser protegidas para evitar que terceiros mal-intencionados as usem para obter
+            vantagens indevidas. Ao se cadastrar em um serviço digital, é comum fornecer informações pessoais de
+            identificação. É importante fornecer apenas informações necessárias e verdadeiras, considerando quem terá
+            acesso a elas. Deixar credenciais vulneráveis pode expor o usuário a riscos ilimitados, como roubo de
+            informações, extorsão, invasão e mais. É fundamental proteger as credenciais e informar apenas o mínimo
+            necessário para minimizar a exposição pessoal.
+        </p>
+        <h1>
+            3. Processo de Autenticação
+        </h1>
+        <p>
+            Quando um usuário acessa um serviço digital, ele faz isso por meio do processo de autenticação (login),
+            fornecendo duas informações: uma identificação única (telefone, nome ou e-mail) e uma senha secreta.
+            É fundamental que a senha seja aleatória e não contenha informações que possam ser facilmente
+            memorizadas e principalmente, não deve conter informações pessoais, pois isso pode ser
+            descoberto por pessoas mal-intencionadas. Além disso, informações pessoais podem ser obtidas de várias
+            maneiras, como em perfis públicos do usuário.
+        </p>
+        <h1>
+            3.1. Multi Fator de Autenticação
+        </h1>
+        <p class="retreat">
+            A autenticação multifator (MFA) é uma medida de segurança adicional que exige dois ou mais fatores de
+            verificação para acessar uma conta ou recurso online. Isso aumenta a dificuldade de acesso não autorizado,
+            pois mesmo com a senha, o atacante precisaria de um segundo fator, como um código enviado ao smartphone, uma
+            impressão digital ou outro tipo de verificação adicional. A MFA se tornou uma prática padrão em serviços
+            digitais, como bancos, redes sociais e
+            sistemas corporativos, fornecendo uma camada adicional de segurança contra roubo de identidade e fraude
+            cibernética.
+        </p>
+        <h1>
+            3.2. Duplo Fator de Autenticação
+        </h1>
+        <p>
+            O duplo fator de autenticação (2FA) é uma medida de segurança adicional que exige um segundo fator além da
+            senha, como um código enviado ao celular ou um token de hardware. Isso torna mais difícil para os atacantes
+            acessarem contas online, mesmo que eles obtenham a senha. Muitos serviços online oferecem 2FA como opção
+            para aumentar a segurança dos usuários. Ativar o 2FA é uma etapa importante para proteger informações
+            pessoais e é recomendável habilitá-lo sempre. Além disso, é possível usar múltiplos
+            hardwares e é indispensável realizar backup em nuvem ou arquivo digital. No entanto, alguns serviços não
+            oferecem 2FA ou
+            exigem aplicativos proprietários, então é importante estar atento aos recursos de recuperação de acesso.
+        </p>
+        <s>
+            <p class="retreat">
+                É muito comum os usuários optarem por usar o aplicativo Google Autenticator ou Microsoft Autenticator em
+                seus smartphones para gerenciar suas chaves de acesso 2FA de suas credencias de acesso. O artigo
+                Forensic
+                Analysis of Two-Factor Authentication Applications apresenta um estudo de análise florense em diversos
+                aplicativos 2FA, alguns aplicativos como Google Autenticator e Microsoft Autenticator apresentam
+                criptografia por padrão nas chaves de acesso, no entanto, pesquisa revela que a maioria dos aplicativos
+                2FA
+                analisados armazena informações confidenciais, como chaves secretas, nomes de contas, endereços de
+                e-mail e
+                PINs de bloqueio, em texto simples, com criptografia fraca ou com criptografia apenas na presença da
+                configuração de um PIN de acesso ao aplicativo. Essa descoberta destaca uma vulnerabilidade crítica,
+                pois um
+                atacante com acesso ao dispositivo poderia facilmente obter essas informações e comprometer a segurança
+                da
+                autenticação 2FA.
+            </p>
+            <p class="retreat">
+                O 2FA não é inviolável, o artigo, "The many ways to hack 2FA", publicado na revista Network Security,
+                discute as maneiras pelas quais a autenticação de dois fatores (2FA) pode ser comprometida. O autor,
+                Roger
+                Grimes, da KnowBe4, argumenta que, embora a 2FA seja considerada mais segura do que apenas um nome de
+                usuário e senha, ainda existem vulnerabilidades. O artigo examina vários métodos de ataque, incluindo o
+                roubo de cookies, o sequestro de assuntos, a troca de SIM, a falsificação de SMS, a duplicação de
+                geradores
+                de código e a engenharia social. Além disso, o artigo analisa o uso de tecnologia subjacente e técnicas
+                sociais. O autor destaca que muitos fornecedores de 2FA erradamente acreditam que suas soluções são
+                invioláveis e que a engenharia social não é um problema. O artigo também menciona a importância de
+                educar os
+                usuários sobre as limitações da 2FA e como proteger suas credenciais. O autor sugere que os usuários
+                devem
+                estar cientes das falhas na 2FA para mitigar os riscos.
+            </p>
+            <p class="retreat">
+                É importante notar que a existência dessas falhas não significa que a 2FA seja inútil. A 2FA ainda
+                oferece
+                uma camada adicional de segurança em comparação com a autenticação de fator único. No entanto, é
+                fundamental
+                que os usuários e administradores estejam cientes das limitações da 2FA e tomem medidas para mitigar os
+                riscos. As dicas a seguir podem ajudar a fortalecer a segurança pessoal para 2FA:
+            <ul>
+                <li>
+                    Estar atento aos ataques de phishig pois nesse cenário o atacante tentará roubar a chave de
+                    verificação
+                    gerado pelo aplicativo;
+                </li>
+                <li>
+                    Proteger o aplicativo ou software 2FA com uma senha forte, assegurando que somente o próprio usuário
+                    tenha
+                    acesso as chaves e que as mesmas estejam criptografadas;
+                </li>
+                <li>
+                    Realizar backup das chaves 2FA para assegurar que possam ser recuperadas em casos de perda do
+                    dispositivo;
+                </li>
+                <li>
+                    Manter o sistema operacional dos dispositivos, aplicativos e softwares atualizados para que as
+                    atualizações
+                    de segurança mais recentes estejam instaladas;
+                </li>
+                <li>
+                    Considerar soluções mais robustas como chaves baseados em hardware que são mais difíceis de serem
+                    comprometidos do que chaves baseadas em softwares ou mensagens;
+                </li>
+            </ul>
+            </p>
+            <p class="retreat">
+                2FA é uma camada de segurança adicional a mais do que apenas uma senha, assim como qualquer outro
+                recurso do
+                MFA. Isso não significa que o usuário estará definitivamente protegido, mas que estará bem mais
+                protegido já
+                que o atacante terá maior dificuldade em realizar o ataque, onde adivinhar uma senha da vítima não será
+                o
+                suficiente para ter domínio da credencial de acesso, pois ainda terá que superar todas as camadas
+                adicionais
+                de segurança.
+            </p>
+        </s>
+        <h1>
+            4. Phishing
+        </h1>
+        <p>
+            Phishing é um tipo de ataque cibernético onde criminosos tentam obter vantagem ou obter informações
+            confidenciais, como senhas, informações pessoais e até detalhes de cartões de crédito, por meio de
+            comunicações fraudulentas. Este termo deriva da palavra "fishing", que significa pescar em inglês,
+            aludindo à ideia de lançar iscas para capturar vítimas desavisadas.
+        </p>
+        <p class="retreat">
+            Os ataques de phishing podem ocorrer através de e-mails, mensagens de texto e chamadas telefônicas
+            fraudulentas,
+            serviços online falsos que se assemelham muito com os verdadeiros, aplicativos malignos em lojas de
+            aplicativos, postagens e propagandas enganosas em redes sociais e
+            anúncios fraudulentos de internet, onde os golpistas se passam por entidades legítimas para persuadir as
+            pessoas a
+            fornecerem suas informações pessoais ou tirar vantagens para realizar ataques ao dispositivo.
+        </p>
+        <p class="retreat">
+            A conscientização sobre esses golpes é crucial, pois o conhecimento é a primeira linha de defesa contra os
+            ataques cibernéticos. É importante estar atento a
+            mensagens suspeitas que solicitam dados confidenciais ou contêm links e anexos desconhecidos. Para se
+            proteger, verifique a autenticidade das mensagens, não clique em links ou baixe anexos de fontes
+            desconhecidas e use soluções de segurança confiáveis.
+            Se receber um código de autenticação sem
+            solicitar, não o informe a ninguém e altere sua senha, pois pode ser uma tentativa de invasão.
+        </p>
+        <s>
+            <p class="retreat">
+                Vários serviços digitais online solicitam o cadastro do número de telefone como um recurso extra para
+                recuperar senhas ou receber alertas de segurança, porem o uso de SMS e redes 2G pode apresentar vários
+                riscos à segurança, principalmente devido à tecnologia mais antiga que essas redes empregam. Outro fator
+                que
+                oferece risco, é a rotatividade de números de telefones, pois não é incomum o usuário optar por trocar
+                de
+                número de telefone em casos de troca de operadora, troca de aparelho, furto, perda ou mesmo falta de
+                pagamento, comprometendo todas as credenciais de serviços digitais online que estejam vinculadas aquele
+                número de telefone.
+            </p>
+            <p class="retreat">
+                As redes 2G, por exemplo, não possuem os métodos de segurança avançados encontrados em padrões mais
+                recentes, como a autenticação mútua, que é um processo onde tanto o remetente quanto o destinatário
+                confirmam a identidade um do outro durante a comunicação. Isso significa que as comunicações em redes 2G
+                podem ser mais suscetíveis a interceptações e ataques de phishing. Além disso, existem equipamentos
+                conhecidos como Estações Base Falsas (FBS) ou Stingrays, que podem criar redes móveis paralelas e
+                enganar
+                dispositivos para desviar a conexão que seria feita com torres de operadoras legítimas. Essas estações
+                falsas são usadas por criminosos para enviar mensagens de texto fraudulentas, explorando os protocolos
+                mais
+                antigos e menos protegidos das redes 2G. O Google, por exemplo, oferece uma configuração desde o Android
+                12
+                para desativar o 2G e utilizar apenas padrões mais recentes de rede, o que ajuda a combater fraudes via
+                SMS.
+            </p>
+            <p class="retreat">
+                Desligar as redes 2G não é uma tarefa simples, especialmente em regiões que dependem delas devido à
+                falta de
+                cobertura de redes mais modernas. Muitos dispositivos, como máquinas de cartão de crédito, ainda operam
+                em
+                padrões 2G e a atualização de toda a infraestrutura para suportar tecnologias mais recentes pode
+                implicar em
+                custos significativos. Portanto, enquanto as redes 2G continuarem ativas, é importante estar ciente dos
+                riscos e tomar medidas para proteger a comunicação, como preferir métodos de comunicação mais seguros
+                sempre
+                que possível e estar atento a mensagens suspeitas que possam indicar tentativas de phishing ou outras
+                formas
+                de fraude.
+            </p>
+            <p class="retreat">
+                Portanto sempre que possível, evite adicionar números de telefone a suas credenciais de acesso a
+                serviços
+                digitais, principalmente quando o número for utilizado para segurança, autenticação ou recuperação de
+                acesso. Existem casos que usar o número de telefone é obrigatório, nesse caso fique atento a segurança
+                do
+                respectivo serviço digital e o mantenha com as credenciais atualizadas. Os serviços digitais online que
+                promovem algum tipo de segurança adicional de verificação ou recuperação por meio de algum outro serviço
+                existente, opte em usar e-mail ou código de recuperação sempre que possível, pois essas duas
+                possibilidades
+                ainda são mais seguras se comparados ao número de telefone.
+            </p>
+        </s>
+        <h1>
+            5. Multiplas Credencais de Acesso
+        </h1>
+        <p>
+            É comum que os usuários precisem gerenciar muitas credenciais de acesso para diversos serviços online.
+            Nessa situação, não é recomendado repetir senhas para evitar que um invasor descubra uma senha e acesse
+            outros serviços.
+            É importante ter uma boa gestão de senhas e credenciais, incluindo a possibilidade de recuperar senhas
+            esquecidas.
+        </p>
+        <s>
+            <p class="retreat">
+                É muito comum os usuários precisarem ter muitas credenciais de acesso para diversos serviços, a maiorias
+                dos
+                sites e serviços oferecidos online solicitam algum tipo de cadastro para usar suas funcionalidades.
+                Muitas
+                credenciais de acesso requerem gestão pessoal dessas credenciais para se manter seguro e não perder o
+                acesso
+                e isso tende a ser mais difícil quando o número de credenciais aumenta.
+            </p>
+            <p class="retreat">
+                Não é recomendado repetir a mesma senha para diversos serviços digitais online, principalmente se
+                corresponde a um o serviço de maior importância, isso evita que se um invasor descobrir uma de suas
+                senhas,
+                tente acessar outros serviços com a mesma senha. Existem situações em que o usuário não possui um
+                costume de
+                gerenciar suas senhas e credenciais de acesso, podendo esquecer a própria senha, normalmente nessas
+                situações alguns serviços digitais oferecem a possibilidade de recuperar a senha solicitando algumas
+                informações pessoais ou outra credencial para receber uma mensagem para gerar uma nova senha. Nessas
+                situações o usuário deve estar ciente de que uma credencial de acesso pode estar vinculada a outra como
+                segurança adicional de verificação ou recuperação por meio de algum outro serviço existente, sendo assim
+                o
+                usuário pode definir uma única conta de e-mail para voltado ao propósito de segurança, logo essa mesma
+                credencial de e-mail deve ter atenção redobrada e estar bem protegida.
+            </p>
+            <p class="retreat">
+                Navegadores de internet e smatfones possuem recursos de memorização do login de senha de autenticação
+                apresentando facilidade muito conveniente ao usuário, incluindo até sincronização em nuvem. Porém essa
+                facilidade também traz ricos a segurança, já que o acesso aos serviços digitais em que o usuário
+                memorizou
+                os acessos estão protegidos apenas pelos recursos de segurança do próprio dispositivo em que se realiza
+                o
+                acesso. Se o invasor ter acesso ao dispositivo, não haverá mais nenhuma barreira para fazer uso dos
+                serviços
+                que estão com o login e senha memorizada, em especial os navegadores de internet que permitem a
+                visualização
+                de todas as senhas através do painel de configurações.
+            </p>
+            <p class="retreat">
+                Importante ressaltar que memorizar logins e senhas em navegadores de internet ou aplicativos não é a
+                mesma
+                coisa que memorizar o acesso dos serviços digitais sempre autenticados, pois quando o login e senha do
+                respectivo serviço digital é memorizado, mesmo que o usuário opte por explicitamente desautenticar, não
+                será
+                necessário informar login e senha novamente para realizar a autenticação. Enquanto que manter o acesso
+                sempre autenticada dispensa ter que passar pelo processo de autenticação novamente.
+            </p>
+            <p class="retreat">
+                Intenções suspeitas de navegadores de internet, dispositivos removíveis, sites maliciosos e softwares
+                suspeitos podem apresentar vírus que exploram vulnerabilidades de softwares que podem tentar obter as
+                informações de logins e senhas memorizados no dispositivo. Nessa situação, recomendar que o usuário faça
+                uso
+                de antivírus é uma conversa repetitiva, porém como segurança adicional o usuário pode optar por usar
+                chaveiros com criptografia ativa, isso é, anotar o login e senha das credencias de acesso em softwares
+                que
+                são criptografados por senhas, assim mesmo que os dados sejam roubados, esses dados não podem ser lidos
+                sem
+                a senha de descriptografia.
+            </p>
+            <p class="retreat">
+                Combinar logins e senhas protegidos por criptografia com autenticação 2FA adiciona muita segurança ao
+                usuário pois haverá várias camadas de segurança. Inclusive o usuário só irá necessitar memorizar apenas
+                uma
+                ou duas senhas, uma para seus logins e senhas notados e outra para seu aplicativo 2FA se não estiver
+                usando
+                uma chave 2FA física. Portanto mesmo que o usuário possua muitas credenciais de acesso com senhas
+                diferentes
+                para cada uma delas, não será necessário saber o login e senha de todas elas.
+            </p>
+        </s>
+        <h1>
+            5.1. Lugares para Guardar Anotações de Credênciais
+        </h1>
+        <p>
+            É improvável que uma pessoa possa memorizar todas as credenciais de acesso, então é necessário anotar as
+            informações em algum lugar. É importante anotar não só o login e senha, mas também outros detalhes, como
+            códigos de recuperação e descrições.
+        </p>
+        <p class="retreat">
+            Ao usar um meio digital para anotações, é desejável usar software ou aplicativos de confiança para proteger
+            as informações. Além disso, é útil evitar letras e caracteres semelhantes para evitar confusões.
+        </p>
+        <h1>
+            5.1.1. Anotações em Meio Físico
+        </h1>
+        <p>
+            É comum optar por anotar as informações das credenciais de acesso em um caderno, já que requer menos
+            desafios de informatização. Deve se ter atenção a senhaa, já que representar caracteres,
+            letras maiúsculas ou minúsculas pode ser mais difícil do que digitalmente e causar confusões nos usuários
+            mais despreparados.
+        </p>
+        <p class="retreat">
+            Optar por anotar informações de credenciais de forma digital em arquivos no computador pessoal, smartfone ou
+            pendrive envolve complexidades pois para fornecer algum tipo de segurança, requer criptografia e backups
+            atualizados para proteger arquivos e evitar que possam ser acessados por usuários indesejados.
+        </p>
+        <h1>
+            5.1.2. Anotações em Serviços de Terceiros
+        </h1>
+        <p class="retreat">
+            Criptografar arquivos manualmente é desafiador e arriscado, porém, existem softwares de terceiros que podem
+            auxiliar nessa tarefa de gerir arquivos com informações possais. Uma maneira mais simples é fazer uso de
+            serviços de terceiros que oferecem softwares e aplicativos para gerenciar logins e senhas de credenciais.
+            Mas antes de tudo, o usuário deve estar atento aos termos de uso de qualquer serviço de software.
+        </p>
+        <p class="retreat">
+            Existem diversos aplicativos, softwares ou até projetos para gerir credenciais de acesso, um deles é o
+            projeto de código aberto multi plataforma KeeWeb que pode ser replicado, instalado em seu computador ou
+            servidor pessoal ou mesmo usar gratuitamente na internet. KeeWeb não é um serviço, portanto não coleta suas
+            informações, cabe ao usuário optar em salvar em uma nuvem de uso pessoal ou no próprio dispositivo pessoal,
+            já que o mesmo gera arquivos que estão sempre criptografados, podendo ser uma alternativa segura aos
+            usuários que pretendem carregar o arquivo criptografado consigo mesmo.
+        </p>
+        <p class="retreat">
+            Normalmente as empresas privadas que oferecem softwares de assinatura para anti vírus, também podem oferecer
+            serviços para gestão de credenciais de acesso, como por exemplo a Kaspersky que oferece o Kaspersky Password
+            Manager.
+        </p>
+        <p class="retreat">
+            O usuário deve evitar anotar senhas em no celular em aplicativos de bloco de notas, como contato de ligações
+            telefônicas, aplicativos de mensagens em geral, inclusive WhatsApp, pois todos esses recursos não são
+            criptografados e normalmente são protegidos para esses fins e podem ser explorados por quem tiver acesso ao
+            dispositivo.
+        </p>
+        <h1>
+            5.1.3. Anotações em Nuvem
+        </h1>
+        <p class="retreat">
+            É muito comum os usuários fazerem uso dos serviços de terceiros, oferecidos pelo Google, Microsoft, Opera e
+            até outras empresas que possuem algum sistema operacional para computadores ou navegadores de internet.
+            Muitas vezes os usuários já estão fazendo o uso desses serviços para anotarem seus logins e senhas sem se
+            darem por conta, já que aquele botão que aparece automaticamente para salvar o login e a senha é muito
+            prático de se utilizar até mesmo de forma desatenta, o que requer atenção redobrada ao utilizar um
+            dispositivo que não seja de uso pessoal.
+        </p>
+        <p class="retreat">
+            Normalmente não há custo sobre esses serviços que estão embutidos em sistema operacionais ou navegadores de
+            internet. Somente se o usuário estiver autenticado com uma credencial vinculada ao mesmo, haverá a opção de
+            ter seus logins e senhas salvos em nuvem e sincronizados em seus dispositivos levando a praticidade de
+            realizar a autenticação sem necessariamente fazer conhecimento do login ou da senha.
+        </p>
+        <p class="retreat">
+            O Google permite salvar logins e senhas em dispositivos com sistema operacional Android ou no navegador de
+            internet Chrome, o usuário poderá visualizar e editar os logins e senhas online nas configurações da própria
+            conta. Já a Microsoft disponibiliza salvar as mesmas informações diretamente no navegador de internet Edge,
+            o usuário poderá visualizar e editar os logins e senhas através do aplicativo Microsoft Autenticador que
+            também é um aplicativo utilizando para 2FA, sendo essa uma opção cômoda aos usuários que pretendem gerenciar
+            as duas informações em um mesmo lugar. Ambos os casos citados não permitem anotar mais detalhes além de
+            login e senha das respectivas credenciais de acesso sendo um fator limitante, principalmente ao anotar
+            descrições, pins e histórico de senhas, inclusive essas informações não estão protegidas nos navegadores de
+            internet e estão protegidas por uma senha simples e curta nos sistemas operacionais, portanto, o 2FA se
+            torna crucial para as credenciais de acesso salvas nesses serviços.
+        </p>
+        <h1>
+            6. Trabalhos Relacionados
+        </h1>
+        <p>
+            Araujo et al. (2015), em seu artigo sobre a influência da Lei de Zipf na escolha de senhas, analisa a
+            criação de senhas seguras considerando a teoria da informação e a lei de Zipf. A lei de Zipf, que descreve a
+            relação entre a frequência de ocorrência de palavras e sua posição em uma lista ordenada, reduz a entropia
+            das senhas quando linguagens naturais são utilizadas, criando padrões que podem ser explorados por
+            atacantes. A pesquisa conclui que a estratégia mais eficaz para criar senhas robustas é a utilização de
+            acrônimos, que aumenta a entropia por caractere em aproximadamente 80%. Outras estratégias, como o uso de
+            palavras isoladas, passphrases e o método Diceware, mostraram-se menos eficazes. O estudo destaca a
+            importância de escolher senhas que maximizem o espaço de busca para ataques de força bruta, especialmente em
+            sistemas com restrições de comprimento.
+        </p>
+        <p class="retreat">
+            Araujo et al. (2015), relata limitações de segurança em algum serviços digitais na conclusão de seu artigo,
+            em que
+        <p class="pt-10 aanhaling">
+            "Conforme observado em, 'Muitas vezes os sistemas restringem o comprimento da chave, por exemplo, a
+            Microsoft restringe a 16 caracteres, muitas lojas de comércio eletrônico também restringem drasticamente o
+            número de caracteres de uma senha. Lojas virtuais como Submarino e Americanas.com utilizam o máximo de 8
+            caracteres, enquanto Netshoes utiliza 15 e, ainda, Mercado Livre, 20. Mais grave ainda são os bancos que,
+            além de restringir o tamanho de sua senha, restringem também o alfabeto, aceitando apenas dígitos de 0 a 9.
+            Essa prática de restringir o tamanho e tipo de caracteres nas senhas pode levar à criação de senhas mais
+            fracas e, portanto, mais vulneráveis a ataques."
+        </p>
+        </p>
+        <p class="retreat">
+            Berrios et al. (2023) destacam que o estudo em seu artigo "Factorizing 2FA: Forensic analysis of two-factor
+            authentication applications" analisou 15 aplicativos de autenticação de dois fatores (2FA) em diferentes
+            sistemas operacionais, incluindo Android, iOS e Windows 10, com foco na análise de artefatos forenses
+            deixados por esses aplicativos. A pesquisa descobriu que a maioria dos aplicativos armazena informações em
+            texto simples ou criptografado/codificado, incluindo chaves secretas, timestamps, nomes de contas e
+            endereços de e-mail, o que pode permitir que a funcionalidade 2FA seja contornada. A descoberta de chaves
+            secretas pode permitir que os examinadores forenses gerem um OTP 2FA válido sem o uso do dispositivo
+            original, reduzindo a necessidade de manipular diretamente o dispositivo e potencialmente alterar os dados.
+            O estudo destaca a importância da criptografia na proteção de dados do usuário, especialmente em aplicativos
+            2FA, e sugere a análise de versões futuras dos aplicativos e a exploração de outros tipos de autenticação
+            multifator.
+        </p>
+        <p class="retreat">
+            Grimes (2019), em seu artigo "The many ways to hack 2FA" de argumenta que a autenticação de dois fatores
+            (2FA) não é infalível e pode ser facilmente contornada. A fraqueza central da 2FA reside no fato de que o
+            token de acesso é geralmente tratado da mesma forma, independentemente do formato ou tipo de autenticação, o
+            que significa que, uma vez obtido o token, o invasor pode acessar o recurso protegido da mesma forma que o
+            usuário legítimo.
+        </p>
+        <p class="retreat">
+            Grimes (2019) descreve três métodos gerais para hackear a 2FA, incluindo exploração de vulnerabilidades
+            tecnológicas, ataques de engenharia social e ataques físicos. Além disso, são apresentados exemplos
+            específicos de como a 2FA pode ser comprometida, como roubo de cookies, sequestro de assunto, troca de SIM,
+            falsificação de SMS, geradores de código duplicados. O autor conclui enfatizando a importância de discutir
+            as vulnerabilidades da 2FA para implementar e usar soluções mais seguras e conscientizar administradores e
+            usuários sobre os pontos fortes e fracos da 2FA.
+        </p>
+        <p class="retreat">
+            Para mais exemplos de como a 2FA pode ser hackeada, Grimes (2019) recomenda o webinar ‘11 Ways to Defeat
+            2FA’, disponível em https://info.knowbe4.com/webinar-11-ways-to-defeat-2fa (acesso em 04/11/2024).
+        </p>
+        <h1>
+            7. Metodologia
+        </h1>
+        <p>
+            A metodologia adotada é a pesquisa aplicada, que segundo Gil (2019), a pesquisa aplicada, abrange estudos
+            elaborados com a finalidade de resolver problemas identificados no âmbito das sociedades em que os
+            pesquisadores vivem.
+        </p>
+        <p class="retreat">
+            O público-alvo desta pesquisa são os usuários de serviços digitais, especialmente aqueles que compartilham
+            dados pessoais online e utilizam plataformas digitais para fins profissionais ou financeiros, que, portanto,
+            necessitam de maior atenção e cuidado com a segurança digital.
+        </p>
+        <p class="retreat">
+            Este estudo utilizou uma abordagem quantitativa para investigar as práticas de segurança digital dos
+            usuários em relação às suas credenciais de acesso. A coleta de dados foi realizada de forma anônima, através
+            de um questionário online elaborado na plataforma Microsoft Forms. O questionário abordava temas como o uso
+            de senhas, autenticação em dois fatores, gestão de credenciais, entre outros, e foi divulgado em grupos de
+            WhatsApp. A pesquisa garantiu a privacidade e
+            confidencialidade das respostas, assegurando o anonimato dos participantes
+        </p>
+        <p class="retreat">
+            Realizado uma avaliação prática dos aplicativos de autenticação de dois fatores Google Authenticator,
+            Microsoft
+            Authenticator e Aegis em sistema Android, durante um período um semestre. Os aplicativos foram selecionados
+            com base em sua
+            popularidade e disponibilidade, bem como a presença de um aplicativo de código aberto (Aegis) para fornecer
+            uma perspectiva mais diversificada. Durante o período de teste, foram avaliados os recursos oferecidos por
+            cada aplicativo, incluindo a facilidade de uso, o gerenciamento de contas, os recursos de segurança
+            adicionais e a usabilidade geral. Além disso, foram registrados os problemas e dificuldades encontrados
+            durante o uso diário dos aplicativos, a fim de avaliar sua eficácia e eficiência em diferentes contextos.
+        </p>
+        <p class="retreat">
+            Realizado uma busca para experimentar aplicativos para gerenciar virtualmente as senhas de
+            serviços digitais basena do nos sistemas operacionais Android e Windows.
+        </p>
+        <h1>
+            8. Resultados e Discussão
+        </h1>
+        <h1>
+            8.1. Pesquisa de Campo
+        </h1>
+        <p>
+            A pesquisa obteve uma amostra composta por 17 participantes, que responderam ao questionário voluntariamente
+            durante um período de dois meses no segundo semestre do ano de 2024. Na pergunta sobre o uso de senhas
+            fortes, 35% dos participantes afirmaram usar senhas muito
+            grandes e aleatórias, enquanto 29% utilizam frases longas e criativas. Já na pergunta sobre a vivência com a
+            tecnologia, a maioria dos participantes possui mais de 10 anos de experiência, e uma boa parte trabalha ou
+            estuda na área. A respeito da memorização de senhas em navegadores, 59% disseram digitar as senhas uma única
+            vez e permanecer logados. Além disso, 41% dos participantes utilizam sempre a autenticação em dois fatores,
+            sendo o Google Authenticator o mais usado. A maioria dos participantes, 10, memoriza suas senhas, e 24% já
+            tiveram o login roubado. Por fim, a avaliação média dos participantes sobre a segurança dos serviços
+            digitais foi de 3,88, e sobre a segurança das suas próprias ações foi de 3,47.
+        </p>
+        <p class="retreat">
+            Na pergunta aberta, 'Sinta-se livre para sugerir um aplicativo, software ou serviço de segurança pessoal',
+            houve apenas uma resposta. O participante sugeriu: 'Joga fora Hotmail e Outlook e usa tudo da Google com
+            dados falsos (data de nascimento etc), aí ninguém consegue recuperar a conta, a não ser você. Visto que teus
+            dados estão expostos em todos os lugares'. Essa resposta possui preferencia clara aos serviços do Google em
+            relação a Microsoft e tem vies ao anônimato para fortalecer a segurança pessoal.
+        </p>
+        <h1>
+            8.2. Avaliação Prática dos Aplicativos de 2FA
+        </h1>
+        <p>
+            Durante a avaliação prática dos aplicativos de autenticação de dois fatores, foram identificados pontos
+            positivos e negativos em relação à usabilidade, segurança e eficácia dos aplicativos.
+        </p>
+        <p class="retreat">
+            O Google Authenticator
+            foi considerado o mais fácil de usar, com uma interface simples, auto explicativa e intuitiva.
+            No entanto, o aplicativo não oferece recursos adicionais, o backup é exclusivamente em nuvem e sómente é
+            permitido instalar o aplicativo em um dispositivo GMS (Google Mobile Services).
+            A memorização de senhas ou preenchimento automático de senhas não tem relação com esse aplicativo, na
+            verdade esse é um recurso do aplicativo do Google em dispositivos GMS.
+        </p>
+        <p class="retreat">
+            Microsoft Authenticator, por sua vez, possui uma interface mais complexa com poucas intruções de utilização
+            do aplicativo. Há recusros adicionais para as contas
+            Microsoft, como a possibilidade de autenticar apenas confirmando a notificação no
+            smartphone, sem a necessidade de digitar o código 2FA e inpecionar o historico de atividade.
+            O Microsoft Authenticator oferece diversos recursos adicionais, talvez o mais importante seja a
+            possibilidade de memorização de senhas ou preenchimento automático de senhas. O backup das chaves
+            2FA é exclusivamente em nuvem e somente é possível instalar o aplicativo em dispositivos GMS.
+            A Microsoft oferece recursos corporativos, então para quem utilizar esse aplicativo para proteger
+            sua conta corporativa, precisa usar uma conta pessoal para realizar o backup das chaves 2FA, também é
+            possível utilizar outros aplicativos para essa finalidade, mas essa opção está um pouco escondida.
+        </p>
+        <p class="retreat">
+            Já o Aegis, por ser um
+            aplicativo de código aberto, oferece maior transparência e controle sobre os dados do usuário, mas possui
+            uma
+            interface de configuração e arquivos que pode ser menos amigável para usuários mais leigos. Nele é possível
+            adicionar
+            e gerenciar
+            chaves de autentiação de dois fatos, exportar e importar backupts para diversos aplicativos ou em formato de
+            arquivos, inclusive em formato com criptografia. A maior vantagem do Aegis é a possibilidade de instalar o
+            aplicativo por meio da loja de
+            aplicativos de código aberto F-Droid, uma alternativa ao Google Play
+            Store, permitindo que o mesmo possa ser intalado em dispositivos Android sem GMS ou AOSP (Android Open
+            Source Project).
+        </p>
+        <h1>
+            8.3. Avaliação de Aplicativos de Gerenciamento de Senhas
+        </h1>
+        <p>
+            No sistema operacional Android com GMS o Google automaticamente oferece um popup para salvar a senha no
+            momento em que é digitada no processo de autenticação de algum aplicativo ou serviço. Como o Google não é
+            especificamente um aplicativo de segurança, pode parecer um pouco escondido a opção de gerenciar as senhas
+            pelas configurações de conta. Além do gerenciamento de senhas com sincronização em nuvem, é possível
+            adicionar anotações, exportar e importar em formato de plianilha CSV sem criptografia.
+        </p>
+        <p class="retreat">
+            O mesmo pop-up do Android utilizado pelo Google pode ser substituido por aplicativos de terceiros, como o
+            Microsoft Authenticator, citado anteriormente que oferece recursos adicionais para gerenciar senhas, sendo
+            assim um aplicativo praticamente completo para a segurança pessoal do usuário, com
+            sincronização em nuvem. Também é possível
+            adicionar anotações, exportar e importar em formato de plianilha CSV sem criptografia.
+            O sistema operacional Windows não possui opção nativa ou pré instalada para salvar senhas, as senhas
+            gerenciadas por esse aplicativo são as mesmas salvas no navegador de internet Microsoft Edge do Windows, que
+            no Windows só funcionam dentro do proprio navegador.
+        </p>
+        <p class="retreat">
+            KeeWeb é um aplicativo de código aberto que oferece uma interface amigável para gerenciar senhas, com maior
+            foco no gerenciamento das anotações.
+            Diferente dos aplicativos citados anteriormente, o KeeWeb não é um aplicativo nativo, mas sim um aplicativo
+            web progressivo, que pode ser instalado em qualquer dispositivo com navegador de internet, porém, sem
+            integração com o sistema operacional, ou seja, nele, o usuário vai apenas realizar anotações.
+            O KeeWeb permite salvar as anotações de senhas em formato de arquivos com ou sem criptografia, os arquivos
+            podem ser exportados localmente ou em nuvens de serviços de terceiros em que o usuários tiver
+            preferencia.
+        </p>
+        <h1>
+            9. Considerações Finais
+        </h1>
+        <p>
+            A pesquisa revelou que os participantes possuem um nível de conscientização sobre a importância da segurança
+            digital, demonstrado pelo uso de senhas fortes e pela autenticação de dois fatores. No entanto, algumas
+            práticas de segurança, como memorizar senhas e permanecer logado, ainda podem ser melhoradas. Uma parcela
+            significativa dos participantes já teve problemas de segurança, o que indica que as práticas atuais não são
+            totalmente eficazes. A pontuação média da segurança em serviços digitais e da
+            segurança pessoal indica espaço para melhorias das ações pessoais e dos serviços digitais.
+        </p>
+        <p class="retreat">
+            A memorização de senhas em navegadores de internet pode expor o acesso ao serviço sem exigir senha. Embora a
+            sincronia em nuvem seja suficientemente segura, não é solicitada uma senha mestre para liberar a
+            autenticação ou até para visualizar a senha. Ambos os casos são escolhidas pelos usuários devido à
+            conveniência sedutora de não ter que se preocupar com senhas e pode permitir que quem tenha acesso ao
+            dispositivo acesse o serviço, o que é ainda mais inseguro se o dispositivo não estiver protegido por um
+            bloqueio de tela.
+        </p>
+        <p class="retreat">
+            Felizmente, a autenticação em duas etapas é uma camada adicional de segurança que pode proteger as contas
+            dos usuários.
+            No entanto, essa tecnologia é práticamente restrita a dispositivos moveis. Utilizar apenas um dispositivo,
+            com backup em nuvem e proteger o mesmo serviço de nuvem nesse dispositivo pode ser uma armadilha que não é
+            préviamente avisado aos usuários.
+            Portanto, é
+            importante possuir uma estrategia de recuperação do backup ou
+            possuir mais de um dispositivo ao mesmo tempo para autenticação, escolhendo bem o aplicativo e os
+            dispositivos para essa situação, do contrário, em caso de perda ou roubo do dispositivo, essa camada
+            adicional de
+            segurança pode dificultar o acesso do proprio proprietário, principalmente se o usuário apenas utiliza o
+            smartphone.
+        </p>
+        <p class="retreat">
+            Utilizar aplicativos de gerenciamento de senhas, apresentou grande praticidade, especialmente para os
+            serviços que não se mantem autenticados, solicitam a autenticação com frequencia ou perdem a autenticação
+            por defeito.
+            Porém os aplicativos de gerenciamento de senhas e navegadores de internet não são perfeitos, em alguns
+            casos, apresnetam o popup sob a caixa de entrada do login, senha ou botões.
+            Já o KeeWeb, se não estiver configurado para o mesmo idioma do dispositivo, foi prejudicado no sistema
+            operacional Android, por ser um aplicativo web progressivo, o Google Chrome insiste em traduzir o aplicativo
+            e até mesmo as senhas, tornando as senhas invalidas.
+        </p>
+        <p class="retreat">
+            Todo o serviço que é bem feito, vai usar um algoritmo de derivação de chave e nunca vai salvar a sua a
+            senha de forma aberta. Logo, se o mesmo limita o
+            comprimento ou variabilidade de caracteres de sua senha, é um grande indicativo de que o serviço não está
+            preocupado com a segurança de seus dados.
+        </p>
+        <h1>
+            Referências
+        </h1>
+        <p class="reference">
+            ARAUJO, L. C; SANSAO, J. P. H; YEHIA, H. C. Influência da lei de Zipf na escolha de senhas. Revista
+            Brasileira de Ensino de Física, São João del Rei, v. 38, n. 1, p. 1313, 2016.
+        </p>
+        <p class="reference">
+            BERRIOS, Jessica; MOSHER, Elias; BENZO, Sankofa; GRAJEDA, Cinthya; BAGGILI, Ibrahim. Factorizing 2FA:
+            Forensic analysis of two-factor authentication applications. Forensic Science International: Digital
+            Investigation, v. 45, p. 301569, 2023.
+        </p>
+        <p class="reference">
+            KASPERSKYSKY PASSWORD MANAGER. Disponível em: <a
+                href="https://www.kaspersky.com.br/password-manager">https://www.kaspersky.com.br/password-manager</a>.
+            Acesso em:
+            12/10/2024.
+        </p>
+        <p class="reference">
+            KEEWEB. KeeWeb [Repositório de código]. Disponível em: <a
+                href="https://github.com/keeweb/keeweb">https://github.com/keeweb/keeweb</a>. Acesso em:
+            14/10/2024.
+        </p>
+        <p class="reference">
+            7-Zip. (s.d.). 7-Zip. Disponível em: <a href="https://www.7-zip.org">https://www.7-zip.org</a>. Acesso em:
+            14/10/2024.
+        </p>
+        <p class="reference">
+            GRIMES, Roger. The many ways to hack 2FA. Network Security, v. 2019, n. 9, p. 8-13, set. 2019. Disponível
+            em: <a
+                href="https://doi.org/10.1016/S1353-4858(19)30107-2">https://doi.org/10.1016/S1353-4858(19)30107-2</a>.
+            Acesso em: 16/10/2024.
+        </p>
+        <p class="reference">
+            GIL, Antonio Carlos. Como Elaborar Projetos de Pesquisa. 6. ed. São Paulo: Atlas, 2019.
+        </p>
+    </div>
+</body>
+
+</html>
