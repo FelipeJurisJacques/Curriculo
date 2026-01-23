@@ -1,0 +1,15 @@
+{
+  "assets": {
+    "application": [
+      "/assets/application/index.mjs",
+      "/assets/application/service-worker.js"
+    ],
+    "markups": [
+      "/assets/markups/felipe.yaml"
+    ],
+    "stylesheet": [
+      "/assets/stylesheet/curriculum.css",
+      "/assets/stylesheet/style.css"
+    ]
+  }
+}

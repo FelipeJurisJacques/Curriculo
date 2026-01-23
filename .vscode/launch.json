@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "docker compose -f ./engine/docker/docker-compose.yaml up"
+        },
+        {
+            "name": "Build",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "docker exec engine_progressive_web_application_typescript_container npx tsx /workspace/backend/engine/compiler/build.ts"
+        },
+        {
+            "name": "Install",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "docker exec engine_progressive_web_application_typescript_container npm install"
+        },
+        {
+            "request": "launch",
+            "name": "Terminal",
+            "type": "node-terminal",
+            "command": "docker exec -it engine_progressive_web_application_typescript_container bash"
+        },
+        {
+            "request": "launch",
+            "type": "node-terminal",
+            "name": "Compile Type Script",
+            "command": "docker exec engine_progressive_web_application_typescript_container npm run build"
+        }
+    ]
+}
