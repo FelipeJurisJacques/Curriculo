@@ -1,0 +1,28 @@
+services:
+  engine_progressive_web_application_nginx:
+    ports:
+      - 80:80
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ../../data/:/var/log/nginx/
+      - ../../public:/usr/share/nginx/html/
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    container_name: engine_progressive_web_application_nginx_container
+  engine_progressive_web_application_typescript:
+    tty: true
+    ports:
+      - 9005:9005
+    build: ./typescript/
+    working_dir: /workspace/
+    volumes:
+      - ../../data/:/workspace/
+      - ../../source/:/workspace/source/
+      - ../helpers/:/workspace/engine/helpers/
+      - ../../public/assets/:/workspace/assets/
+      - ../compiler/:/workspace/engine/compiler/
+      - ../abstracts/:/workspace/engine/abstracts/
+      - ./typescript/package.json:/workspace/package.json
+      - ./typescript/tsconfig.json:/workspace/tsconfig.json
+      - ./typescript/rollup.config.js:/workspace/rollup.config.js
+    container_name: engine_progressive_web_application_typescript_container

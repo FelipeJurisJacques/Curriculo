@@ -100,6 +100,33 @@ div.cloak .authors {
 @media print {
     body {
         background-color: white;
+        overflow: visible !important;
+    }
+
+    .app-sidebar {
+        display: none !important;
+    }
+
+    .app-container {
+        display: block !important;
+        height: auto !important;
+    }
+
+    .app-content {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        background-color: white !important;
+    }
+
+    /* Override inline styles from JS */
+    div.page {
+        margin: 0 auto !important;
+        transform: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
     }
 
     div.container {

@@ -11,7 +11,7 @@
             "name": "Build",
             "request": "launch",
             "type": "node-terminal",
-            "command": "docker exec engine_progressive_web_application_typescript_container npx tsx /workspace/backend/engine/compiler/build.ts"
+            "command": "docker exec engine_progressive_web_application_typescript_container npx tsx /workspace/engine/compiler/build.ts"
         },
         {
             "name": "Install",

@@ -5,6 +5,7 @@
       "/assets/application/service-worker.js"
     ],
     "markups": [
+      "/assets/markups/docker-compose.yaml",
       "/assets/markups/felipe.yaml"
     ],
     "stylesheet": [
