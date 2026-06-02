@@ -1,0 +1,20 @@
+services:
+  curriculum_nginx:
+    ports:
+      - 80:80
+    image: nginx:alpine
+    restart: unless-stopped
+    container_name: curriculum_nginx_container
+    volumes:
+      - ./data/:/var/log/nginx/
+      - ../public:/usr/share/nginx/html/
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+  curriculum_typescript:
+    tty: true
+    ports:
+      - 9005:9005
+    build: ./typescript/
+    working_dir: /workspace/
+    volumes:
+      - ../application/:/workspace/
+    container_name: curriculum_typescript_container
