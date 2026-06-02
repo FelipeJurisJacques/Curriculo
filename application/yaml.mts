@@ -6,16 +6,17 @@ export default abstract class Yaml {
         return result
     }
 
-    private static recursiveDecode(lines: string[]): void {
+    private static recursiveDecode(lines: string[]): any {
         if (lines.length === 1) {
             const value = lines[0]
-            if (!Yaml.key(value)) {
+            if (value !== undefined && !Yaml.key(value)) {
                 return Yaml.value(value)
             }
         }
         let result: any = null
         for (let i = 0; i < lines.length; i++) {
             const line = lines[i]
+            if (line === undefined) continue
             const trim = Yaml.trim(line)
             if (!trim) continue
             if (!result) {
@@ -28,6 +29,9 @@ export default abstract class Yaml {
                 ]
                 for (let j = i + 1; j < lines.length; j++) {
                     const l = lines[j]
+                    if (l === undefined) {
+                        break
+                    }
                     if (l.trim().startsWith('-')) {
                         break
                     } else {
@@ -43,6 +47,9 @@ export default abstract class Yaml {
                     const sub: string[] = []
                     for (let j = i + 1; j < lines.length; j++) {
                         const l = lines[j]
+                        if (l === undefined) {
+                            break
+                        }
                         if (Yaml.tab(l) > tab) {
                             sub.push(l)
                             i = j
@@ -61,7 +68,8 @@ export default abstract class Yaml {
 
     private static tab(value: string): number {
         for (let i = 0; i < value.length; i++) {
-            if (value[i] !== ' ' && value[i] !== '-') {
+            const char = value[i]
+            if (char !== undefined && char !== ' ' && char !== '-') {
                 return i
             }
         }
@@ -76,7 +84,9 @@ export default abstract class Yaml {
             }
             let str = false
             for (let i = 0; i < value.length; i++) {
-                switch (value[i]) {
+                const char = value[i]
+                if (char === undefined) continue
+                switch (char) {
                     case '"':
                         str = !str
                         break
@@ -104,6 +114,7 @@ export default abstract class Yaml {
                 let result = ''
                 for (let i = 0; i < value.length; i++) {
                     const c = value[i]
+                    if (c === undefined) continue
                     if (key) {
                         if (c === ':') {
                             result = ''
@@ -157,6 +168,7 @@ export default abstract class Yaml {
             }
             for (let i = 0; i < value.length; i++) {
                 const c = value[i]
+                if (c === undefined) break
                 if (
                     c === '_'
                     || (i === 0 && /^[a-zA-Z]+$/.test(c))

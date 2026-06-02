@@ -16,7 +16,7 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         /* Emit */
-        "noEmit": true,
+        "noEmit": false,
         "sourceMap": true,
         /* Strict Type-Checking */
         "strict": true,
@@ -43,7 +43,8 @@
     },
     "include": [
         "**/*.ts",
-        "**/*.tsx"
+        "**/*.tsx",
+        "**/*.mts"
     ],
     "exclude": [
         "node_modules"
