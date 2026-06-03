@@ -16,16 +16,23 @@ interface Experience {
 }
 
 interface Interest {
-    name: string;
+    description?: string;
+}
+
+interface Resume {
+    description?: string;
 }
 
 interface Curriculum {
     name: string
+    github?: string
+    actuator: string
     profile?: string
     linkedin?: string
     role?: string // Optional as it wasn't in the sample YAML
     trainings?: Training[]
     skills?: Skill[]
+    resume?: Resume[]
     experiences?: Experience[]
     personal_interests?: Interest[]
 }
@@ -168,6 +175,20 @@ function generateCurriculumHTML(data: Curriculum): string {
     const trainingHTML = data.trainings?.map(t => t.name).join('<br>') || '';
     const skillsHTML = data.skills?.map(s => s.name).join('<br>') || '';
 
+    // Resume
+    const resumeHTML = data.resume?.map(r => r.description || r.description || '').join('<br>') || ''
+
+    // Interests
+    const interestsHTML = data.personal_interests?.map(inr => {
+        if (inr.description) {
+            return `<p class="justify">
+                ${inr.description || inr.description || ''}
+            </p>`
+        } else {
+            return ''
+        }
+    }).join('') || ''
+
     // Experiences
     const experiencesHTML = data.experiences?.map(exp => `
         <p class="justify">
@@ -177,22 +198,51 @@ function generateCurriculumHTML(data: Curriculum): string {
         </p>
     `).join('') || '';
 
-    // Interests
-    const interestsHTML = data.personal_interests?.map(inr => `
-        <p class="justify">
-            ${inr.name}
-        </p>
-    `).join('') || '';
-
     // If role is missing in YAML, use a default or empty
     const roleHTML = data.role ? `<h4 class="retreat pt-16">${data.role}</h4>` : ''
 
-    const inHtml = data.linkedin ? `<b>Linkedin</b><p><a href="https://www.linkedin.com/in/${data.linkedin}">www.linkedin.com/in/${data.linkedin}</a></p><br>` : ''
+    const inHtml = data.linkedin ? `<b>Linkedin</b><p><a href="https://www.linkedin.com/in/${data.linkedin}" target="_blank">in/${data.linkedin}</a></p><br>` : ''
+
+    const gitHtml = data.github ? `<b>GitHub</b><p><a href="https://github.com/${data.github}" target="_blank">github.com/${data.github}</a></p><br>` : ''
+
+    // Reorganize columns as requested:
+    // "apresentar o resumo, uma linha em branco, os interesses pessoais (se houver), outra linha em branco e então a experiencia profissional"
+    let rightColumnHTML = '';
+
+    if (resumeHTML) {
+        rightColumnHTML += `
+            <b>Resumo</b>
+            <p class="justify">
+                ${resumeHTML}
+            </p>
+        `;
+    }
+
+    if (interestsHTML) {
+        if (rightColumnHTML) {
+            rightColumnHTML += '<br>';
+        }
+        rightColumnHTML += `
+            <b>Interesses Pessoais</b>
+            ${interestsHTML}
+        `;
+    }
+
+    if (experiencesHTML) {
+        if (rightColumnHTML) {
+            rightColumnHTML += '<br>';
+        }
+        rightColumnHTML += `
+            <b>Experiência Profissional</b>
+            ${experiencesHTML}
+        `;
+    }
 
     return `
         <div class="page" style="margin: 0; transform: scale(0.9); transform-origin: top center;">
             <div class="column_left color-white">
                 ${inHtml}
+                ${gitHtml}
                 <b>Formação</b>
                 <p>
                     ${trainingHTML}
@@ -204,18 +254,12 @@ function generateCurriculumHTML(data: Curriculum): string {
                 </p>
             </div>
             <div class="column_right">
-                ${experiencesHTML}
-                
-                ${data.personal_interests && data.personal_interests.length > 0 ? `
-                   <p class="justify">
-                        <b>Interesses Pessoais</b><br>
-                   </p>
-                   ${interestsHTML}
-                ` : ''}
+                ${rightColumnHTML}
             </div>
             <div class="top left color-white">
-                <img class="float-left" src="${data.profile}" alt="perfil" width="162" height="162" style="object-fit:cover;">
+                <img class="float-left" src="${data.profile}" alt="perfil" width="198" height="162" style="object-fit:cover;">
                 <h1 class="retreat pt-24">${data.name}</h1>
+                <h2 class="retreat pt-20">${data.actuator}</h2>
                 ${roleHTML}
             </div>
         </div>
